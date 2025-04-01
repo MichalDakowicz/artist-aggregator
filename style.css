@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --border-color: #ccc;
+    --container-bg: #fff;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --button-bg-color: #1db954;
+    --button-hover-bg-color: #1aa34a;
+    --spotify-green: #1db954;
+    --spotify-black: #191414;
+    --spotify-grey: #b3b3b3;
+}
+body {
+    font-family: "Nunito Sans", sans-serif;
+    padding: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+}
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #eee;
+    --container-bg: #333;
+    --input-bg: #333;
+    --input-border: #666;
+    --border-color: #666;
+    --button-bg-color: var(--spotify-green);
+    --button-hover-bg-color: #1ed760;
+    --spotify-grey: #777;
+}
+button {
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+}
+button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+button:active {
+    transform: scale(0.98);
+}
+button:disabled {
+    background-color: #535353;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 25px 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#darkMode {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 5px 10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+#darkMode label {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--spotify-green);
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: var(--button-hover-bg-color);
+}
+body.dark-mode a:hover {
+    color: #fff;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--spotify-green);
+    box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.2);
+}
+
+select {
+    cursor: pointer;
+}
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--spotify-grey);
+}
+body.dark-mode label {
+    color: #aaa;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+h1 {
+    background: linear-gradient(45deg, #1db954, #27d363, #57ec8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 12px;
+    margin-top: 1.5rem;
+    display: none;
+    border: 1px solid var(--border-color);
+}
+body.dark-mode .progress-bar-container {
+    background-color: #444;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--spotify-green);
+    transition: width 0.4s ease-out;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    #darkMode {
+        bottom: 0.5rem;
+        left: 0.5rem;
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+}

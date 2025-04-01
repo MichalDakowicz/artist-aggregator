@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spotify Artist Collector</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="spotify-collector.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Spotify Artist Collector</h1>
+            <p
+                style="
+                    text-align: center;
+                    font-size: 0.9em;
+                    margin-bottom: 1rem;
+                "
+            >
+                <i
+                    >Note: Adds artist's songs (Albums/Singles) & features
+                    (Compilations/Appears On) to a playlist, removing
+                    duplicates. Requires Spotify login (~1hr token). Some
+                    artists create colab albums without listing themselves on
+                    the songs, you need to add them mannually.</i
+                >
+            </p>
+
+            <div
+                id="login-section"
+                class="input-section"
+                style="text-align: center"
+            >
+                <p style="margin-bottom: 1rem">
+                    Please log in with Spotify to begin.
+                </p>
+                <button id="login-button">Login with Spotify</button>
+            </div>
+
+            <div id="app-section" class="input-section" style="display: none">
+                <p style="margin-bottom: 1rem; text-align: center">
+                    Logged in!
+                    <button
+                        id="logout-button"
+                        style="
+                            font-size: 0.8em;
+                            padding: 5px 10px;
+                            margin-left: 10px;
+                            vertical-align: middle;
+                        "
+                    >
+                        Logout
+                    </button>
+                </p>
+                <hr style="border-color: var(--border-color); margin: 15px 0" />
+
+                <div class="form-group">
+                    <label for="artist-input">Spotify Artist Link or ID:</label>
+                    <input
+                        type="text"
+                        id="artist-input"
+                        placeholder="e.g., https://open.spotify.com/artist/... or Artist ID"
+                        aria-label="Spotify Artist Link or ID"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="playlist-select">Add Songs To Playlist:</label>
+                    <select
+                        id="playlist-select"
+                        disabled
+                        aria-label="Target Playlist"
+                    >
+                        <option value="">-- Loading Your Playlists --</option>
+                    </select>
+                </div>
+
+                <button id="start-button" disabled style="margin-top: 1rem">
+                    Select Artist & Playlist
+                </button>
+
+                <div
+                    id="progress-bar-container"
+                    class="progress-bar-container"
+                    style="margin-top: 1.5rem"
+                >
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="output-section" id="outputSection" aria-live="polite">
+                <div
+                    id="status"
+                    style="font-weight: 500; margin-bottom: 1rem"
+                ></div>
+            </div>
+        </div>
+
+        <div id="darkMode">
+            <input
+                type="checkbox"
+                id="dark-mode-toggle"
+                aria-label="Toggle dark mode"
+            />
+            <label for="dark-mode-toggle" style="cursor: pointer"
+                ><b>Dark Mode</b></label
+            >
+        </div>
+
+        <script src="script.js"></script>
+        <script src="spotify-collector.js"></script>
+    </body>
+</html>
