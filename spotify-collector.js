@@ -1,5 +1,5 @@
 const CLIENT_ID = "a2b902956a934854b3e79d20d4ed6ce4";
-const REDIRECT_URI = "http://127.0.0.1:5500/index.html";
+const REDIRECT_URI = "https://michaldakowicz.github.io/artist-aggregator/";
 const SCOPES =
     "playlist-read-private playlist-modify-public playlist-modify-private";
 const API_BASE = "https://api.spotify.com/v1";
